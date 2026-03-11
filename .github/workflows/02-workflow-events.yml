@@ -1,9 +1,10 @@
-name: 02 - Eventos
+name: Eventos
 on: 
-    - push
-    - pull_request
-    - schedule:
+    push:
+    pull_request:
+    schedule:
         - cron: '15 4,5 * * *' 
+    workflow_dispatch:
 jobs:
     echo: 
         runs-on: ubuntu-latest
