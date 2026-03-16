@@ -24,3 +24,4 @@ jobs:
             - name: echo
               run: |
                 echo "Workflow triggered by filters or activity types with env: ${{ env.DEBUG_MODE }}"
+                echo "And my var is ${{ vars.MY_VAR }}"
