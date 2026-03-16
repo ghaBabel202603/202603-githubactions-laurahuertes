@@ -4,7 +4,6 @@ on:
         inputs:
             pass-unit-tests:
                 description: 'Should the unit tests pass?'
-                default: 'false'
                 type: boolean
 jobs:
     lint-build:
