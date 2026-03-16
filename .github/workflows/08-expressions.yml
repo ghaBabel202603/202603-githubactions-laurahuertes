@@ -1,4 +1,4 @@
-name: 08 - Expressions
+name: 08 - Expressionss
 on:
     workflow_dispatch:
         inputs:
