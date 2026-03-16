@@ -15,11 +15,11 @@ jobs:
         steps:
             - name: Print GITHUB_OUTPUT path
               run: |
-                echo "GITHUB_OUTPUT: ${{env.GITHUB_OUTPUT}}"
+                echo "GITHUB_OUTPUT: $GITHUB_OUTPUT"
             - name: Build
               id: build
               run: |
-                echo "status=${{github.event.inputs.build-status}}" >> ${{env.GITHUB_OUTPUT}}
+                echo "status=${{github.event.inputs.build-status}}" >> $GITHUB_OUTPUT
                 echo "status=${{github.event.inputs.build-status}}"
         outputs:
             build-status: ${{steps.build.outputs.status}}
