@@ -29,10 +29,6 @@ jobs:
           restore-keys: |
             ejercicio-14-
             ejercicio-
-
-
-        if: ${{ inputs.use-cache }}
-        with:
       - name: Install Dependencies
         run: npm ci
       - name: Run Tests
