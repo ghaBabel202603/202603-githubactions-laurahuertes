@@ -1,4 +1,4 @@
-name: 17 - 1 - Custom Actions - Composite.
+name: 17 - 2 - Custom Actions - Composite.
 on: 
     workflow_dispatch:
         inputs:
@@ -7,7 +7,7 @@ on:
                 options:
                     - dev
                     - prod
-run-name: 17 - 1 - Custom Actions - Composite c| env - ${{ inputs.target-env }}.
+run-name: 17 - 2 - Custom Actions - Composite c| env - ${{ inputs.target-env }}.
 env:
     working-directory: 17-custom-actions/my-app
 jobs:
