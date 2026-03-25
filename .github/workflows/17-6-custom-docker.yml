@@ -1,0 +1,20 @@
+name: 17 - 6 - Custom Actions - Docker
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Your name'
+        required: true
+        default: 'World'
+jobs:
+  hello-to-you-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Hello to You
+        uses: ./.github/actions/hello-to-you-docker
+        with:
+            name: ${{ github.event.inputs.name }}
+
