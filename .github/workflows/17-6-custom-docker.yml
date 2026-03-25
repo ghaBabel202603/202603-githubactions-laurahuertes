@@ -9,12 +9,21 @@ on:
 jobs:
   hello-to-you-docker:
     runs-on: ubuntu-latest
+    outputs:
+      time: ${{ steps.hello-to-you-ID.outputs.time }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Hello to You
+        id: hello-to-you-ID
         uses: ./.github/actions/hello-to-you-docker
         with:
             name: ${{ github.event.inputs.name }}
 
+  get-the-time:
+    runs-on: ubuntu-latest
+    needs: hello-to-you-docker
+    steps:
+      - name: Get the time
+        run: echo "The time is ${{needs.hello-to-you-docker.outputs.time}}"
